@@ -1,3 +1,5 @@
+# AUTHOR: Simon Weydert
+
 # https://medium.com/@gbemiadekoya/importing-python-libraries-in-vs-code-e9e7806586a7
 from graphics import *
 
@@ -8,7 +10,12 @@ unitLength = 100
 
 """ FUNCTIONS """
 def tileCombo(i, j):
-    return Rectangle(Point(unitLength*i, unitLength*j), Point(unitLength*(i+1), unitLength*(j+1)))
+    returnRect = Rectangle(Point(unitLength*i, unitLength*j), Point(unitLength*(i+1), unitLength*(j+1)))
+    if ((i+j) % 2) is 0:
+        returnRect.setFill("red")
+    else:
+        returnRect.setFill("yellow")
+    return returnRect
     #return LetterArray[i]+NumberArray[j]
 
 def createTable(numTiles):
